@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0c59061e-dbd6-4851-b965-07314ce97534": {
+      "ProjectGuid": "0c59061e-dbd6-4851-b965-07314ce97534",
+      "DisplayName": "MinMax_Checkers",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

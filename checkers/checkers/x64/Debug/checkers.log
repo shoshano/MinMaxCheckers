@@ -1,0 +1,3 @@
+﻿  Game.cpp
+C:\Users\user\Desktop\studia\Podstawy programowania\Programowanie laboratorium Kluwak\checkers\checkers\Board.h(32,14): warning C4309: 'initializing': truncation of constant value
+  checkers.vcxproj -> C:\Users\user\Desktop\studia\Podstawy programowania\Programowanie laboratorium Kluwak\checkers\x64\Debug\checkers.exe

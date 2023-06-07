@@ -2,6 +2,7 @@
 #define GAME_H
 #include "Board.h"
 #include "Piece.h"
+#include "Move.h"
 
 
 class Game

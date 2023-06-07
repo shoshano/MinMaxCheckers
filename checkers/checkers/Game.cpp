@@ -2,6 +2,7 @@
 
 void Game::start()
 {
+	
 	//tu dodac instrukcje
 
 	for (int i = 0; i < 8; i++) {
@@ -25,45 +26,35 @@ void Game::start()
 
 void Game::play()
 {
+	Move _move;
 	bool _player = 0;
 	char _choice[2];
-	int _position[2];
+	int startPosition[2];
+	int movePosition[2];
+	bool correctPosition = 0;
+	bool correctMove = 0;
+	//int _position[2];
 	// gracz bialy - czlowiek
 	while(1){
-	if (!_player) {
-		while (1) {
-			std::cout << "Wybierz pionek (litera cyfra): "; std::cin >> _choice;
-			if (_choice[0] > 64 && _choice[0] < 73 && _choice[1] > 48 && _choice[1] < 57 ) {
-				_position[0] = _choice[0] - 65;
-				_position[1] = _choice[1] - 49;
+		if (!_player) {
+			while (!correctPosition) {
+				std::cout << "Wybierz pionek (litera cyfra): "; std::cin >> _choice;
+				correctPosition = _move.isPositionCorrect(_choice[0], _choice[1], _player, board, startPosition);
 			}
-			else if (_choice[0] > 96 && _choice[0] < 105 && _choice[1] > 48 && _choice[1] < 57) {
-				_position[0] = _choice[0] - 97;
-				_position[1] = _choice[1] - 49;
-			}
-			else {
-				std::cout << "ZLA POZYCJA\n";
-				continue;
-			}
-			if (board.getBoard()[_position[1]][_position[0]] == board.getWhitePiece()) {
-				std::cout << "Podaj ruch: \n";
-				break;
-			}
-			else {
-				std::cout << "NIE MA TU TWOJEGO PIONKA\n";
-				continue;
+			while (!correctMove) {
+				std::cout << "Wybierz pole docelowe wybranegopionka (litera cyfra): "; std::cin >> _choice;
+				correctMove = _move.isMoveCorrect(_choice[0], _choice[1], _player, board, movePosition, startPosition);
 			}
 		}
-	}
 
 
-	//gracz czarny komputer
-	else if (_player)
-	{
+		//gracz czarny komputer
+		else if (_player)
+		{
 
-	}
+		}
 
-	_player = !_player;
+		_player = !_player;
 	}
 }
 
